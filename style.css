@@ -1,0 +1,137 @@
+html {
+    background-color: #d8d8d8;
+    color: #282828;
+    font-family: "Josefin Sans";
+}
+
+label {
+    display: block;
+    font-size: 24px;
+    margin: 10px;
+}
+
+input {
+    background-color: #d8d8d8;
+    border: 0px;
+    border-radius: 5px;
+    font-size: 20px;
+    margin: 10px auto;
+    padding: 10px;
+}
+
+textarea {
+    background-color: #d8d8d8;
+    border: 0px;
+    border-radius: 5px;
+    font-size: 16px;
+    display: block;
+    margin: 10px auto;
+    overflow-wrap: break-word;
+    padding: 10px;
+    width: 90%;
+}
+
+hr {
+    border: none;
+    border-top: 2px solid;
+    color: #282828;
+}
+
+select {
+    background-color: #d8d8d8;
+    border: 0px;
+    border-radius: 5px;
+    font-size: 20px;
+    height: 46px;
+    margin: 10px;
+    padding: 10px;
+}
+
+button {
+    background-color: #00bfff;
+    border: 0px;
+    border-radius: 10px;
+    color: #282828;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}
+        
+button:hover {
+    background-color: #00a8ee;
+}
+
+button:active {
+    background-color: #00c8ff;
+}
+
+.card {
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    margin : 20px auto;
+    padding: 20px;
+    width: 90%;
+}
+
+.card:hover {
+    background-color: #e0e0e0;
+}
+
+.card-header {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.card-footer {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+input.text {
+    display: block;
+    overflow-wrap: break-word;
+    width: 90%;
+}
+
+.modal {
+    animation-name: fadeIn;
+    animation-duration: 0.4s;
+    background-color: rgb(0 0 0 / 30%);
+    display: none;
+    height: 100%;
+    left: 0;
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.modal-board {
+    animation-name: slideIn;
+    animation-duration: 0.8s;
+    background-color: #f5f5f5;
+    border: 0px;
+    border-radius: 5px;
+    bottom: 5%;
+    left: 30%;
+    margin : 20px auto;
+    padding: 20px;
+    position: fixed;
+    width: 40%;
+}
+
+@keyframes slideIn {
+    from { bottom: -300px; opacity: 0 }
+    to { bottom: 10%; opacity: 1 }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0 }
+    to { opacity: 1 }
+}
+

@@ -1,0 +1,50 @@
+div.modal-board
+    div.modal-header
+        h1 NOVO PRODUTO
+
+    hr
+
+    div.modal-body
+        form
+            label Nome do produto:
+            input.text(
+                type="text"
+                name="product_nm"
+            )
+
+            label Descrição do produto:
+            textarea(
+                maxlength="150"
+                name="product_ds"
+            )
+
+            label Valor do produto:
+            input.text(
+                type="text"
+                name="product_vl"
+            )
+
+            select(
+                name="product_dp"
+            )
+                option.option(value="1") Disponível
+                option.option(value="0") Indisponível
+
+            br
+
+            button(
+                type="submit"
+                hx-post="/products"
+                hx-target=".body"
+                hx-swap="beforeend"
+                hx-trigger="click"
+                hx-on::after-request="document.getElementById('modal-placeholder').style.display='none'"
+            ) Submit
+
+            button(
+                type="button"
+                hx-get="/"
+                hx-on::before-request="document.getElementById('modal-placeholder').style.display='none'"
+            ) Cancel
+
+    div.modal-footer

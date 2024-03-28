@@ -1,0 +1,19 @@
+div.card(
+        id=`${product.product_id}`
+        hx-get=`/products/${product.product_id}`
+        hx-target="#modal-placeholder"
+        hx-swap="innerHTML"
+        hx-trigger="click"
+        hx-on::after-request="document.getElementById('modal-placeholder').style.display='block'"
+)
+    div.card-header
+        h2 #{product.product_nm}
+        h2 R$ #{product.product_vl}
+        h2 #{product.product_dp}
+    hr
+
+    div.card-body
+        h2 Descrição:
+        p #{product.product_ds}
+    
+    div.card-footer

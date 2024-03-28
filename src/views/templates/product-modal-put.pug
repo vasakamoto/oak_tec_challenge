@@ -1,0 +1,65 @@
+div.modal-board
+    div.modal-header
+        h1 EDITAR PRODUTO
+
+    hr
+
+    div.modal-body
+        form
+            label Nome do produto:
+            input.text(
+                type="text"
+                name="product_nm"
+                placeholder=`${product.product_nm}`
+            )
+
+            label Descrição do produto:
+            textarea(
+                maxlength="150"
+                name="product_ds"
+                placeholder=`${product.product_ds}`
+            )
+
+            label Valor do produto:
+            input.text(
+                type="text"
+                name="product_vl"
+                placeholder=`${product.product_vl}`
+            )
+
+            select(
+                name="product_dp"
+                placeholder=`${product.product_dp}`
+            )
+                option.option(value="1") Disponível
+                option.option(value="0") Indisponível
+
+            br
+
+
+            button(
+                type="submit"
+                hx-put=`/products/${product.product_id}` 
+                hx-target=`#${product.product_id}`
+                hx-swap="outerHTML"
+                hx-trigger="click"
+                hx-on::after-request="document.getElementById('modal-placeholder').style.display='none'"
+            ) Submit
+
+            button(
+                type="button"
+                hx-get="/"
+                hx-on::before-request="document.getElementById('modal-placeholder').style.display='none'"
+            ) Cancel
+
+            button(
+                type="button"
+                hx-delete=`/products/${product.product_id}`
+                hx-target=`#${product.product_id}`
+                hx-swap="delete"
+                hx-trigger="click"
+                hx-on::before-request="document.getElementById('modal-placeholder').style.display='none'"
+            ) Delete
+
+    div.modal-footer
+

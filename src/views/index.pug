@@ -1,0 +1,31 @@
+doctype html
+html(lang="en-US")
+    head
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width")
+        link(rel="icon" href="data:,")
+        link(href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet")
+        link(href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet")
+        link(rel="stylesheet" href="./style.css")
+        title Oak Tec Challenge
+        script(src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous")
+
+    body
+        div.header
+            h1 PRODUTOS
+            button(
+                hx-get="/products/new"
+                hx-target="#modal-placeholder"
+                hx-swap="innerHTML"
+                hx-trigger="click"
+                hx-on::after-request="document.getElementById('modal-placeholder').style.display='block'"
+            ) Adicionar Produto
+
+        div.body(
+            hx-get="/products"
+            hx-target="this"
+            hx-swap="innerHTML"
+            hx-trigger="load"
+        )
+
+        div.modal#modal-placeholder
