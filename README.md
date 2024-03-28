@@ -16,8 +16,11 @@
 <br>
 <code>npm install</code>
 <br>
+<br>
 <p>Então</p>
+<br>
 <code>npm run test</code>
+<br>
 <h2>Notas:</h2>
 <ul>
   <li>Não foi feita a validação dos campos de entrada</li>
